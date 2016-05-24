@@ -20,7 +20,7 @@
     "conditionals"
   ],
   "peerDependencies": {
-    "react-native": "^0.1"
+    "react-native": "0.x"
   },
   "author": "Andrej Badin <contact@andrejbadin.com> (http://andrejbadin.com)",
   "license": "MIT"

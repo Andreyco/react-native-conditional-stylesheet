@@ -57,7 +57,6 @@ const Button = (props) => {
 # TODO
 - docs
 - HOC
-- support style name string values with spaces, e.g: `base active`, ...
 - check for style existence when pushing to collection
 - automatically pick platform specific styles when object contains `ios` or `android` keys
 - tests

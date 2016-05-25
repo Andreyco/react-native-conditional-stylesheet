@@ -32,7 +32,10 @@ function create(rawStyle) {
       if (!arg) continue;
 
       if (isString(arg)) {
-        collectedStyles.push(style[arg]);
+        for (const styleName of arg.split(' ')) {
+          collectedStyles.push(style[styleName]);
+        }
+
         continue;
       }
 
@@ -47,6 +50,7 @@ function create(rawStyle) {
             collectedStyles.push(style[key]);
           }
         });
+
         continue;
       }
 

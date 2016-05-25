@@ -29,6 +29,8 @@ function create(rawStyle) {
     let collectedStyles = [];
 
     for (const arg of args) {
+      if (!arg) return;
+
       if (isString(arg)) {
         collectedStyles.push(style[arg]);
         continue;

@@ -29,7 +29,7 @@ function create(rawStyle) {
     let collectedStyles = [];
 
     for (const arg of args) {
-      if (!arg) return;
+      if (!arg) continue;
 
       if (isString(arg)) {
         collectedStyles.push(style[arg]);

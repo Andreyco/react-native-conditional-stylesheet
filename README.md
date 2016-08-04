@@ -57,6 +57,4 @@ const Button = (props) => {
 # TODO
 - docs
 - HOC
-- check for style existence when pushing to collection
 - automatically pick platform specific styles when object contains `ios` or `android` keys
-- tests

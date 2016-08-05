@@ -1,56 +1,46 @@
 # Usage
 ```
-// Import using ES6 syntax
-import ConditionalStyleSheet from 'react-native-conditional-stylesheet';
+import { StyleSheet } from 'react-native';
+import createSelector from 'react-native-conditional-stylesheet';
 
-// ... or use `require`
-const ConditionalStyleSheet = require('react-native-conditional-stylesheet');
-
-// Create conditional style builder as you would create traditional styles.
-const buildStyle = ConditionalStyleSheet.create({
-  base: {
-    fontSize: 200,
-    backgroundColor: 'white',
-  },
-  success: {
-    color: 'green',
-  },
-  danger: {
-    color: 'red',
-  },
-});
-
-const Button = (props) => {
-  let style;
-
-  // Build style:
-  //
-  // 1, Explicitly name styles to pick & use
-  style = buildStyle('base', 'active');
-
-  // 2, Selectively pick styles based on given conditions
-  style = buildStyle('base', {
-    success: props.success,
-    danger: props.danger,
-  });
-
-  // 3, Push custom style on the fly for additional styling
-  // or to override previously passed styles
-  style = buildStyle('base', {
-      success: props.success,
-      danger: props.danger,
+const styleSheet = StyleSheet.create({
+    button: {
+        backgroundColor: 'gray',
+        padding: 20,
+        borderRadius: 5,
     },
-    {
-      fontWeight: 'bold',
-      backgroundColor: 'black',
-    }
-  );
+    buttonBlue: {
+        backgroundColor: 'blue',
+    },
+    buttonRed: {
+        backgroundColor: 'red',
+    },
+});
+const select = createSelector(styleSheet);
 
-  return (
-    <View>
-      <Text style={style}>{ props.children }</Text>
-    </View>
-  );
+class Button extends Component {
+    static propTypes = {
+        // Background color variations
+        blue: PropTypes.bool,
+        red: PropTypes.bool,
+    }
+
+    render() {
+        // We use `button` as base style. Base on props button becomes blue or red, or stays gray.
+        const style = select('button', {
+            buttonBlue: this.props.blue,
+            buttonRed: this.props.red,
+        });
+
+        // If you want to add some styles on the fly, use `.add` method to pass it down.
+        style.add({ marginBottom: this.props.last ? 0 : 25 });
+
+        return (
+            <View style={style}>
+                <Text>Press Me<Text/>
+            </View>
+        );
+    }
 }
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "react-native-conditional-stylesheet",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Native package that helps you selectively pick and merge styles based on provided conditions.",
   "main": "module.js",
   "scripts": {

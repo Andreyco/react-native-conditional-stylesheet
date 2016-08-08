@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Main Module.
  * It builds array of styles based in given rules.

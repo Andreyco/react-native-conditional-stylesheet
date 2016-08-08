@@ -19,15 +19,12 @@
     "conditional",
     "conditionals"
   ],
-  "peerDependencies": {
-    "react-native": "0.x"
-  },
   "author": "Andrej Badin <contact@andrejbadin.com> (http://andrejbadin.com)",
   "license": "MIT",
   "devDependencies": {
     "babel-jest": "^14.1.0",
     "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
+    "jest": "^14.1.0",
     "jest-cli": "^14.1.0"
   },
   "jest": {
